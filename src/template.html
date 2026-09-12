@@ -3,9 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Webpack Template</title>
+    <title>Weather Getter</title>
   </head>
   <body>
-    <div id="content"></div>
+    <h1>Know the weather condition of any location</h1>
+    <p>This weather app makes use of the visual crossing API to get the weather condtion of any location of your choice.</p>
+    <div id="input-field">
+      <input type="text" id="location" placeholder="Enter a city and the Country">
+      <button id="search-btn">Search</button>
+  </div>
+    <div id="card">
+      <div id="content" class="loading">Loading...</div>
+    </div>
   </body>
 </html>
