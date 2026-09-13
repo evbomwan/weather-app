@@ -5,14 +5,20 @@ export async function getWeather(location) {
   const response = await fetch(url);
   if (!response.ok) {
     const message = await response.text();
-    throw new error(
+    throw new Error(
       `Weather API request failed (${response.status}): ${message}`,
     );
   }
   const data = await response.json();
-  return {
-    temperature: data.currentConditons.temp,
-    conditions: data.currentConditons.conditions
-  };
+  console.log(data.currentConditions.conditions);
+  return data;
+  // return {
+  //   temperature: data.currentConditons.temp,
+  //   conditions: data.currentConditons.conditions
+  // };
 }
+
+// export async function loadWeather(data) {
+//   // this function takes user input then uses it as t
+// }
 

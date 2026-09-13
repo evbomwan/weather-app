@@ -1,4 +1,8 @@
 import "./styles.css";
-import {getWeather} from "./modules/api.js";
+import { getWeather } from "./modules/api.js";
 
-// getWeather("Lagos, Nigeria");
+const searchBtn = document.getElementById("search-btn");
+searchBtn.addEventListener("click", () => {
+  const location = document.getElementById("location").value;
+  getWeather(location);
+});
