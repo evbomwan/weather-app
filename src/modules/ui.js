@@ -17,13 +17,34 @@ export function showError(message = "Couldn't load weather. Try again.") {
     toggleBtn.style.display = "none";
 }
 
-export function showWeather(temp, condition) {
+export function showWeather(temp, condition, icon) {
     currentTempC = temp;
     isCelsius = true;
 
     const content = document.getElementById("content");
     const toggleBtn = document.getElementById("unit-toggle");
+
+    const icons = {
+        "clear-day": "☀️",
+    "clear-night": "🌙",
+    "partly-cloudy-day": "⛅",
+    "partly-cloudy-night": "☁️",
+    "cloudy": "☁️",
+    "rain": "🌧️",
+    "showers-day": "🌦️",
+    "showers-night": "🌧️",
+    "thunder-rain": "⛈️",
+    "thunder-showers-day": "⛈️",
+    "thunder-showers-night": "⛈️",
+    "snow": "❄️",
+    "snow-showers-day": "🌨️",
+    "snow-showers-night": "🌨️",
+    "fog": "🌫️",
+    "wind": "💨"
+    };
+    const weatherIcon = icons[icon] || "🌡️";
     content.innerHTML = ` 
+    <div class="weather-icon">${weatherIcon}</div>
     <div class="temp">${temp}°</div>
     <div class="condition">${condition}</div>
     `;
