@@ -15,7 +15,7 @@ export function showError(message = "Couldn't load weather. Try again.") {
 }
 
 export function showWeather(temp, condition) {
-    currentTempC = currentTempC;
+    currentTempC = temp;
     isCelsius = true;
 
     const content = document.getElementById("content");
