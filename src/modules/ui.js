@@ -4,7 +4,10 @@ let isCelsius = true;
 export function showLoading() {
     const content = document.getElementById("content");
     const toggleBtn = document.getElementById("unit-toggle");
-    content.innerHTML = `<div class="loading">Loading...</div>`;
+    content.innerHTML = `<div class="loading">
+    <div class="spinner"></div>
+    <p>Loading...</p>
+    </div>`;
     toggleBtn.style.display = "none";
 }
 export function showError(message = "Couldn't load weather. Try again.") {
